@@ -11,3 +11,7 @@ npm run package-mac
 
 # npm run dev
 ```
+
+## email
+
+`SMTP username` and `SMTP password` is the API KEY, API SECRET form Mailjet.
