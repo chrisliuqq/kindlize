@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Kindlize</title>
+    <link media="all" type="text/css" rel="stylesheet" href="assets/css/app.css">
+    <link media="all" type="text/css" rel="stylesheet" href="assets/lib/font-awesome.min.css">
+</head>
+<body>
+    <div class="wrapper" id="wrapper">
+        <nav class="flex align-items-center">
+            <img class="icon" src="assets/icon/icon.png" />
+            <h1>Kindlize</h1>
+            <button class="margin-left-auto" @click="modal('.setting', true)"><i class="fa fa-gear fa-2x"></i></button>
+        </nav>
+        <section class="main-container">
+            <div id="main">
+                <div class="search-bar">
+                    <input type="text" class="search-text input-control" v-model="keyword" placeholder="keyword of novel's title" />
+                </div>
+                <ul class="novel-box flex justify-content-around">
+                    <li class="novel flex" v-for="(novel, novelId) in keywordNovel" v-bind:class="{ active: status.currentNovel === novel }">
+                        <h2 class="title" @click="novelSelect(novel)">{{ novel.title }}<small class="update-date"> - {{ novel.ctime | moment('YYYY-MM-DD') }}</small><button class="btn btn-default" type="button" @click="openInFinder(novel.folder, $event)"><i class="fa fa-tv" title="使用 Finder 開啟"></i></button></h2>
+                        <div class="novel-detail flex justify-content-center">
+                            <div class="cover-box">
+                                <img class="cover" v-bind:src="novel.cover" />
+                            </div>
+                            <ul class="novel-files">
+                                <li class="novel-item" v-for="novelItems in currentNovelItems">
+                                    <button type="button" @click="novelItemClick(novel, novelItems)"><i class="fa fa-book"></i></button>
+                                    {{ novelItems.title }}
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="modal setting">
+            <form class="modal-dialog" @submit.prevent="onSettingSubmit">
+                <div class="modal-header">
+                    <button type="button" class="close" onclick="javascript:modal(null, false);"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">設定</h4>
+                </div>
+
+                <div class="modal-body">
+
+                    <div class="form-group flex">
+                        <label for="path2Dropbox">Dropbox 小說路徑</label>
+                        <input type="text" class="input-control" name="path2Dropbox" @click="selectPathDropbox($event)" v-bind:value="config.path2Dropbox" />
+                    </div>
+
+                    <div class="form-group flex">
+                        <label for="SMTPUsername">SMTP Username</label>
+                        <input type="text" class="input-control" name="SMTPUsername" v-bind:value="config.SMTPUsername" />
+                    </div>
+
+                    <div class="form-group flex">
+                        <label for="googleSMTPPassword">SMTP Password</label>
+                        <input type="text" class="input-control" name="SMTPPassword" v-bind:value="config.SMTPPassword" />
+                    </div>
+
+                    <div class="form-group flex">
+                        <label for="email">Kindle Email</label>
+                        <input type="text" class="input-control" name="email" v-bind:value="config.email" />
+                    </div>
+
+                    <!-- <div class="form-group flex">
+                        <label for="embeddedFont"><input type="checkbox" name="embeddedFont" v-model="config.embeddedFont" />內嵌思原黑體</label>
+                    </div> -->
+                </div>
+
+                <div class="modal-footer form-btns flex justify-content-center">
+                    <button type="submit" class="btn">儲存</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <div id="notification" class="notification flex align-items-center justify-content-center">測試</div>
+
+    <script>
+      require('./assets/js/app.js');
+    </script>
+</body>
+</html>

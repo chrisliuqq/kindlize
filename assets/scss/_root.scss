@@ -1,0 +1,50 @@
+@import "compass/reset";
+
+/* -------------------------- *
+ * variables
+ * -------------------------- */
+
+ $breakpoints: (
+    desktop: min,
+    mobile: max
+);
+
+$zindex-nav: 100;
+$zindex-page-element: 110;
+$zindex-sidebar: 120;
+$zindex-notification: 130;
+$zindex-modal: 140;
+
+$gloabal-min-width: 1024px;
+$gloabal-middle-width: 1280px;
+$gloabal-max-width: 1440px;
+
+// $lightish-green: #5dec55;
+$seaweed: #1cd67c;
+$steel-grey: #7c8784;
+$light-grey: #f6f7f6;
+$pale-grey: #f7faf9;
+
+// $sectionSplashColorFrom: #20dcc2;
+// $sectionSplashColorTo: #50e382;
+$navHeight: 60px;
+$marginSpace: 16px;
+// $widthRDW: 1023px;
+$navBackgroundColor: #fff;
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "儷黑 Pro", Sans-Serif;
+    background-color: $light-grey;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    outline: none;
+}

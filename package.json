@@ -1,0 +1,22 @@
+{
+  "name": "Kindlize",
+  "version": "1.0.0",
+  "productName": "Kindlize",
+  "description": "TXT to Mobi and send to kindle",
+  "main": "assets/js/bootstrap.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --enable-logging",
+    "package-mac": "electron-packager ./ --out=dist/ --overwrite --icon=assets/icon/icon.icns"
+  },
+  "author": "chrisliuqq",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "~1.8.2",
+    "electron-packager": "^11.1.0"
+  },
+  "dependencies": {
+    "electron-settings": "^3.1.4",
+    "nodemailer": "^4.6.3"
+  }
+}

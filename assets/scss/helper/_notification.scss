@@ -1,0 +1,18 @@
+.notification {
+    position: fixed;
+    bottom: -50px;
+    right: 0;
+    height: 50px;
+    min-width: 200px;
+    background-color: #ffd7ff;
+
+    transition: all 1s;
+    border-radius: 10px;
+    border: 1px solid #632473;
+    padding: 10px 32px;
+    color: #632473;
+
+    &.active {
+        bottom: 10px;
+    }
+}

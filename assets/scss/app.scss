@@ -1,0 +1,73 @@
+@import '_root';
+@import 'helper/_flex';
+@import 'helper/_form';
+@import 'helper/_modal';
+@import 'helper/_notification';
+
+body {
+    background-color: $light-grey;
+}
+
+nav {
+    padding: 0 16px;
+    height: $navHeight;
+    background-color: $navBackgroundColor;
+
+    .icon {
+        height: 50px;
+    }
+}
+
+#main {
+    padding: 16px;
+}
+
+.novel {
+    margin: 8px;
+    width: 300px;
+    border: 1px solid rgba(100, 100, 100, 0.6);
+    border-radius: 4px;
+    padding: 8px;
+
+    .title {
+        width: 100%;
+        transition: all .5s;
+    }
+
+    .novel-detail {
+        display: none;
+        width: 100%;
+    }
+
+    .cover {
+        max-width: 150px;
+        height: auto;
+    }
+
+    .novel-files {
+        margin-left: 32px;
+        display: none;
+    }
+
+    .update-date {
+        font-size: 12px;
+    }
+
+    &.active {
+        transition: all 1s;
+        width: 100%;
+        .title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+        .novel-detail {
+            display: flex;
+        }
+        .novel-files {
+            display: block;
+        }
+    }
+
+
+}

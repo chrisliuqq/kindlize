@@ -1,0 +1,37 @@
+.input-control {
+    display: block;
+    margin-bottom: 16px;
+    padding: 8px;
+    width: 100%;
+    min-height: 36px;
+    background-color: #ffffff;
+    font-size: 14px;
+    border: solid 1px #b7beb7;
+    border-radius: 4px;
+}
+
+select.input-control {
+    height: 36px;
+}
+
+.input-text {
+    line-height: 36px;
+    height: 36px;
+    font-size: 14px;
+}
+
+button {
+    // border-radius: 8px;
+    min-height: 32px;
+}
+
+.form-btns {
+    button {
+        padding: 8px 16px;
+        background-color: #d6b0e6;
+        border-radius: 8px;
+        border: 1px solid #923dc7;
+        color: #923dc7;
+        font-size: 15px;
+    }
+}
